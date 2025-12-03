@@ -8,7 +8,7 @@ int main() {
     printf("\t\t\t TEST YOUR TYPING SPEED \t\t\t \n\n\n");
 
     printf("Get\t");
-    fflush(stdout);  //from stdio lib that force to print immediately 
+    fflush(stdout);  
     sleep(1);
 
     printf("Set\t");
@@ -23,25 +23,25 @@ int main() {
     
     char data[500];
     
-    long start = (long)time(NULL); //used time.h library stores the latest time
+    long start = (long)time(NULL); 
     
-   fgets(data, sizeof(data), stdin); //scanf was not taking the words after space so we used fgets
+   fgets(data, sizeof(data), stdin); 
 
-    // printf("Before removing newline: '%s'\n", data);//learning with chat gpt it removes the extra line breaks the below one//
+    
 
-    data[strcspn(data, "\n")] = '\0';  // remove newline
+    data[strcspn(data, "\n")] = '\0'; 
 
-    //printf("After removing newline: '%s'\n", data);
     
     
-    long end = (long)time(NULL);//same as above
     
-    long timeTaken = end-start; //diffrence between them to get the exact diffrence
+    long end = (long)time(NULL);
+    
+    long timeTaken = end-start; 
     
     
     printf("\n\nTime Took %ld seconds \n",timeTaken);
     
-    int words =1; //started with one cause usually we dont hit space at last , we can check to if its there 
+    int words =1; 
     
     int letters = strlen(data)-1;
     
@@ -55,10 +55,11 @@ int main() {
     
     int WPM = words*60/timeTaken;
     
-    printf("Your WPM is %d Approx \n",WPM); // used int so approxed
+    printf("Your WPM is %d Approx \n",WPM); 
     
     printf("\t\t\t** Thanks **\t\t\t");
     
 
     return 0;
+
 }
